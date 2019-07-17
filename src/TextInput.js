@@ -2,9 +2,10 @@ import React from "react";
 import propTypes from "prop-types";
 
 const TextInput = props => {
+  //line 8 is like an if statement saying that if the left is true, then do the right
   return (
     <div>
-      <label htmlFor={props.id}>{props.label}</label>
+      {props.label && <label htmlFor={props.id}>{props.label}</label>}
       <br />
       <input
         type="text"
