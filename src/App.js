@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getSession } from "./API/sessionApi";
+import TextInput from "./TextInput";
 
 const blankSession = {
   id: null,
@@ -50,16 +51,12 @@ function App() {
       <h1>KCDC Sessions</h1>
       <form onSubmit={saveSession}>
         <h2>Add Session</h2>
-        <div>
-          <label htmlFor="title">Title</label>
-          <br />
-          <input
-            type="text"
-            onChange={onChange}
-            id="title"
-            value={session.title}
-          />
-        </div>
+        <TextInput
+          id="title"
+          onChange={onChange}
+          label="Title"
+          value={session.title}
+        />
         <input type="submit" value="Add Session" />
       </form>
       <ul>{sessions.map(renderSession)}</ul>
